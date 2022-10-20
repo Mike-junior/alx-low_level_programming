@@ -5,42 +5,42 @@
  */
 int main(void)
 {
-int i, j, k;
-i = 64;
+int i, e, g;
+i = 48;
 
-j = 64;
+e = 48;
 
-k = 64;
+g = 48;
 
-while (j < 74)
+while (e < 58)
 {
-	i = 64;
+	i = 48;
 
-while (i < 74)
+while (i < 58)
 {
-	k = 64;
+	g = 48;
 
-while (k < 74)
+while (g < 58)
 {
 
-if (j != i && j != k && i != k && j < i && i < k)
+if (e != i && e != g && i != g && e < i && i < g)
 	{
-	putchar(j);
+	putchar(e);
 	putchar(i);
-	putchar(k);
+	putchar(g);
 
-	if (i == 62 && j == 61 && k == 63)
+	if (i == 56 && e == 55 && g == 57)
 	{
 		break;
 	}
 	putchar(',');
 	putchar(' ');
 	}
-	k++;
+	g++;
 	}
 	i++;
 	}
-	k++;
+	e++;
 	}
 putchar('\n');
 return (0);
