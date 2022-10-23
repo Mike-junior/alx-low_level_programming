@@ -2,7 +2,7 @@
 
 /**
  *  print_line - print a sttaight line in the terminal
- * @a:
+ * @n: number of times
  * Return: void
  */
 
