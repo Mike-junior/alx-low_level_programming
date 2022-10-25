@@ -2,7 +2,7 @@
 
 /**
  *main - _Print _putchar
- * 
+ *
  * Return: Return 0
  */
 
