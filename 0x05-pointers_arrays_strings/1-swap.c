@@ -1,10 +1,9 @@
-Task 1
 #include "main.h"
 
 /**
  * swap_int - Swaps the values of 2 integers.
- * @a:First argument to be swapped.
- * @b:Second argument to be swapped.
+ * @a: First argument to be swapped.
+ * @b: Second argument to be swapped.
  *
  * Return: void.
  */
