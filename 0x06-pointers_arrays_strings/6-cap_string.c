@@ -14,7 +14,7 @@ char *cap_string(char *x)
 
 	while (x[a])
 	{
-		i=0;
+		i = 0;
 		while (i < len)
 		{
 			if ((a == 0 || x[a - 1] == separator_words[i])
