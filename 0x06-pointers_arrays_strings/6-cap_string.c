@@ -7,7 +7,7 @@
 char *cap_string(char *x)
 {
 
-	char separator_words[] = {32, 9, '\n', ',' ';', '.', '!', '?', '"',
+	char separator_words[] = {32, 9, '\n', ',', ';', '.', '!', '?', '"',
 		'(', ')', '{', '}' };
 	int len = 13;
 	int a = 0, i;
