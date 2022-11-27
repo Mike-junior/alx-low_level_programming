@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
  * _strncat - concatenates two strings
@@ -12,7 +13,8 @@ char *_strncat(char *dest, char *src, int n)
 {
 /** this still works
   *strncat(dest, src, n);
-  return (dest);
+  *return (dest);
+  *nb ; the string.h must be included in this case.
   */
 
 	int i = 0, j = 0;
