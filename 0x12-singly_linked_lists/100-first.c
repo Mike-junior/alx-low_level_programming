@@ -1,17 +1,12 @@
-#include<stdio.h>
+#include <stdio.h>
+
+void myCfunctin(void) __attribute__ ((constructor));
 
 /**
- * 
- myCfunction- Apply the constructor attribute to myCfunction() so that it
- *   is executed before main()
+ * myCfunctin - prints a sentence before the main
+ * function is executed
  */
-void myCfunction(void) __attribute__ ((constructor));
-
-/**
- * 
- myCfunction- implementation of myCfunction
- */
-void myCfunction(void)
+void myCfunctin(void)
 {
 	printf("You're beat! and yet, you must allow,\n");
 	printf("I bore my house upon my back!\n");
