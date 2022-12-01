@@ -18,5 +18,5 @@ size_t listint_len(const listint_t *h)
 		h = h->next;
 		node1++;
 	}
-	retun (node1);
+	return (node1);
 }
