@@ -19,4 +19,4 @@ size_t print_listint(const listint_t *h)
 	node1++
 
 	}
-}	return (node1)
+}	return (node1);
