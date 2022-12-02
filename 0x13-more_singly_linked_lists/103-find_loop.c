@@ -8,26 +8,25 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	listint_t *Fnode, *Snode;
+	listint_t *tortoise, *hare;
 
-	Fnode = Snode = head;
-	while (Fnode && Snode && Snode->next)
+	tortoise = hare = head;
+	while (tortoise && hare && hare->next)
 	{
-		Fnode = Fnode->next;
-		Snode = Snode->next->next;
-		if (Fnode == Snode)
+		tortoise = tortoise->next;
+		hare = hare->next->next;
+		if (tortoise == hare)
 		{
-			Fnode = head;
+			tortoise = head;
 			break;
 		}
 	}
-	if (!Fnode || !Snode || !Snode->next)
+	if (!tortoise || !hare || !hare->next)
 		return (NULL);
-	while (Fnode != Snode)
+	while (tortoise != hare)
 	{
-		tortoise = Fnode->next;
-		Snode = Snode->next;
+		tortoise = tortoise->next;
+		hare = hare->next;
 	}
-	return (Snode);
+	return (hare);
 }
-
