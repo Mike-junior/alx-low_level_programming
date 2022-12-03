@@ -1,36 +1,78 @@
 #include "lists.h"
 
 /**
- * free_listint_safe - frees a listint_t linked list.
- * @head: double pointer to the start of the list
+ * free_listp2 - frees a linked list
+ * @head: head of a list.
  *
- * Return: the number of nodes in the list
+ * Return: no return.
  */
+
+void free_listp2(listp_t **head)
+{
+	listp_t *temp;
+	listp_t *curr;
+
+	if (head != NULL)
+	{
+		curr = *head;
+
+		while ((temp = curr) != NULL)
+		{
+			curr = curr->next;
+
+			free(temp);
+		}
+		*head = NULL;
+	}
+}
+
+/**
+ * free_listint_safe - frees a linked list.
+ * @h: head of a list.
+ *
+ * Return: size of the list that was freed.
+ */
+
 size_t free_listint_safe(listint_t **h)
 {
-	size_t i, num = 0;
-	listint_t **list = NULL;
-	listint_t *next;
+	size_t nodeA = 0;
 
-	if (head == NULL || *head == NULL)
-		return (num);
-	while (*head != NULL)
+	listp_t *head_pointer, *new, *add;
+	listint_t *curr;
+
+	head_pointer = NULL;
+
+	while (*h != NULL)
 	{
-		for (i = 0; i < num; i++)
+		new = malloc(sizeof(listp_t));
+
+		if (new == NULL)
+			exit(98);
+		new->p = (void *)*h;
+		new->next = head_pointer;
+		head_pointer = new;
+		add = head_pointer;
+
+		while (add->next != NULL)
 		{
-			if (*head == list[i])
+			add = add->next;
+
+			if (*h == add->p)
 			{
-				*head = NULL;
-				free(list);
-				return (num);
+				*h = NULL;
+
+				free_listp2(&head_pointer);
+				return (nodeA);
 			}
 		}
-		num++;
-		list = _ra(list, num, *head);
-		next = (*head)->next;
-		free(*head);
-		*head = next;
+		curr = *h;
+		*h = (*h)->next;
+		free(curr);
+		nodeA++;
 	}
-	free(list);
-	return (num);
+	*h = NULL;
+
+	free_listp2(&head_pointer);
+	return (nodeA);
 }
+
